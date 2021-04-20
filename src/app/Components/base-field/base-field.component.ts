@@ -1,4 +1,5 @@
-import { Component, OnInit , Input , Output} from '@angular/core';
+import { Component, OnInit , Input , Output ,EventEmitter} from '@angular/core';
+
 
 @Component({
   selector: 'base-field',
@@ -6,6 +7,7 @@ import { Component, OnInit , Input , Output} from '@angular/core';
   styleUrls: ['./base-field.component.css']
 })
 export class BaseFieldComponent implements OnInit {
+
   @Input('classNames') classNames : string;
   @Input('fieldName') fieldName : string;
   @Input('placeholderText') placeholderText : string;
@@ -18,12 +20,18 @@ export class BaseFieldComponent implements OnInit {
   // Error
   @Input('isError') isError : boolean;
   @Input('errorMessage') errorMessage : string;
+  // extra
+  @Input('inputType') inputType : string;
+
+  @Input() bindModelData: any;
+  @Output() bindModelDataChange = new EventEmitter();    
 
   constructor() { }
 
   ngOnInit() {
     console.log(this.isError)
-
   }
+
+  
 
 }

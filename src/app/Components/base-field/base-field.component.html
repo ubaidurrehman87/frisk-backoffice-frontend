@@ -11,14 +11,14 @@
     </div>
     <input  
     [class]="classNames"
-    type="text" 
+    [type]="inputType" 
     name="text" 
-    
     [required]="required" 
     autocomplete="off" 
     [placeholder]="placeholderText"
     id="kt_maxlength_1"
     [maxLength]="maxLength"
+    
     />
     <div class="input-group-prepend">
       <span class="input-group-text" *ngIf="rightAddon">{{rightAddon}}</span>
