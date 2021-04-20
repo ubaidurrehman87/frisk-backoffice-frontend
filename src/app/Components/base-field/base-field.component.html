@@ -1,0 +1,26 @@
+<!-- 
+<label class="form-label fs-6 fw-bolder text-dark">{{fieldName}}</label>
+
+<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" /> -->
+
+<div class="form-group">
+  <label class="form-label fs-6 fw-bolder text-dark">{{fieldName}}</label>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" *ngIf="leftAddon">{{leftAddon}}</span>
+    </div>
+    <input  
+    class="form-control-lg form-control-solid"
+    type="text" 
+    name="text" 
+    [style.borderColor]="isError ? 'red' : 'white'"
+    [required]="required" 
+    autocomplete="off" 
+    [placeholder]="placeholderText"/>
+    <div class="input-group-prepend">
+      <span class="input-group-text" *ngIf="rightAddon">{{rightAddon}}</span>
+    </div>
+  </div>
+  <span class="form-text text-muted" *ngIf="!isError">{{infoMessage}}</span>
+  <span class="form-text text-muted" *ngIf="isError" style="color: red;">{{errorMessage}}</span>
+</div>
