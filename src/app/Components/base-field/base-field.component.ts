@@ -6,6 +6,7 @@ import { Component, OnInit , Input , Output} from '@angular/core';
   styleUrls: ['./base-field.component.css']
 })
 export class BaseFieldComponent implements OnInit {
+  @Input('classNames') classNames : string;
   @Input('fieldName') fieldName : string;
   @Input('placeholderText') placeholderText : string;
   @Input('infoMessage') infoMessage : string;

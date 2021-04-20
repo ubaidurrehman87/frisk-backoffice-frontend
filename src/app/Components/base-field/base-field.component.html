@@ -10,13 +10,16 @@
       <span class="input-group-text" *ngIf="leftAddon">{{leftAddon}}</span>
     </div>
     <input  
-    class="form-control-lg form-control-solid"
+    [class]="classNames"
     type="text" 
     name="text" 
-    [style.borderColor]="isError ? 'red' : 'white'"
+    
     [required]="required" 
     autocomplete="off" 
-    [placeholder]="placeholderText"/>
+    [placeholder]="placeholderText"
+    id="kt_maxlength_1"
+    [maxLength]="maxLength"
+    />
     <div class="input-group-prepend">
       <span class="input-group-text" *ngIf="rightAddon">{{rightAddon}}</span>
     </div>
