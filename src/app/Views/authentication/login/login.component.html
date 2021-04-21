@@ -4,23 +4,19 @@
     <!--begin::Content-->
     <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
       <!--begin::Logo-->
-      <a href="index.html" class="mb-12">
+      <!-- <a href="index.html" class="mb-12">
         <img alt="Logo" src="assets/media/logos/logo-2-dark.svg" class="h-45px" />
-      </a>
+      </a> -->
       <!--end::Logo-->
       <!--begin::Wrapper-->
       <div class="w-lg-500px bg-white rounded shadow-sm p-10 p-lg-15 mx-auto">
         <!--begin::Form-->
-        <form class="form w-100"  >
+        <form class="form w-100" >
           <!--begin::Heading-->
           <div class="text-center mb-10">
             <!--begin::Title-->
-            <h1 class="text-dark mb-3">Sign In to Metronic</h1>
-            <!--end::Title-->
-            <!--begin::Link-->
-            <div class="text-gray-400 fw-bold fs-4">New Here?
-            <a href="authentication/flows/basic/sign-up.html" class="link-primary fw-bolder">Create an Account</a></div>
-            <!--end::Link-->
+            <h1 class="text-dark mb-3">Sign In to Frisk</h1>
+            
           </div>
           <!--begin::Heading-->
           <!--begin::Input group-->
@@ -33,12 +29,11 @@
             [infoMessage]="'We will never share your email with anyone else.'" 
             [required]="true"
             [isError]="false"
-            [errorMessage]= "'Error message display here when isError is true'"
-            
-            [maxLength] = "10"
+            [errorMessage]= "''"
+            [maxLength] = "50"
+            [minLength] = "0"
             [inputType] = "'email'"
-            
-            (change)="emailChange($event.target.value)"
+            (valueChange)="emailChange($event)"
             ></base-field>
 
           </div>
@@ -49,14 +44,13 @@
             [classNames] = "'form-control form-control-lg form-control-solid'"
             [fieldName]="'Password'" 
             [placeholderText]="'Password'" 
-            
             [required]="true"
             [isError]="false"
-            [errorMessage]= "'Error message display here when isError is true'"
-            formControlName = "Password"
+            [errorMessage]= "''"
             [maxLength] = "16"
+            [minLength] = "8"
             [inputType] = "'password'"
-            (change)="passwordChange($event.target.value)"
+            (valueChange)="passwordChange($event)"
             ></base-field>
             <div class="d-flex flex-stack mb-2">
 
@@ -69,7 +63,7 @@
           </div>
           <div class="text-center">
             <!--begin::Submit button-->
-            <button type="submit" (click)="onSubmit()" class="btn btn-lg btn-primary fw-bolder me-3 my-2">
+            <button type="submit" (click)="onSubmit()" [disabled]="isError" class="btn btn-lg btn-primary fw-bolder me-3 my-2">
               <span class="indicator-label">Sign In</span>
               <span class="indicator-progress">Please wait...
               <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

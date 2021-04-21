@@ -18,12 +18,15 @@
     [placeholder]="placeholderText"
     id="kt_maxlength_1"
     [maxLength]="maxLength"
-    
+    [minLength]="minLength"
+    [style.borderColor] = "isError ? 'red' : 'white'"
+    (keydown)="onChangeField($event)"
+    (keyup)="onChangeField($event)"
     />
     <div class="input-group-prepend">
       <span class="input-group-text" *ngIf="rightAddon">{{rightAddon}}</span>
     </div>
   </div>
   <span class="form-text text-muted" *ngIf="!isError">{{infoMessage}}</span>
-  <span class="form-text text-muted" *ngIf="isError" style="color: red;">{{errorMessage}}</span>
+  <span class="form-text" *ngIf="isError" style="color: red;">{{errorMessage}}</span>
 </div>

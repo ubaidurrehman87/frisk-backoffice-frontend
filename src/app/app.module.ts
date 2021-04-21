@@ -3,20 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './Frontend/authentication/login/login.component';
-import { SignupComponent } from './Frontend/authentication/signup/signup.component';
-import { BaseFieldComponent } from './Components/base-field/base-field.component';
+import { LoginComponent } from './Views/authentication/login/login.component';
+
+import { BaseFieldComponent } from './Views/Common/base-field/base-field.component';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent,
-    BaseFieldComponent
+    BaseFieldComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
